@@ -1,4 +1,4 @@
-# Claude Code Asset Marketplace - Design Document
+# Claude Shed - Design Document
 
 **Version:** 1.0
 **Date:** January 6, 2026
@@ -35,13 +35,13 @@ A **unified marketplace for Claude Code assets** - the first platform to support
 
 ### Key Differentiators
 
-| Existing Platforms | Our Approach |
-|-------------------|--------------|
-| Skills only | Full asset suite from day one |
-| Quantity over quality (60k+ unvetted) | Automated quality scoring |
-| Overwhelming search results | Primary + alternatives pattern |
-| No author tools | Analytics dashboard, future monetization |
-| Basic discovery | Trending, categories, staff picks |
+| Existing Platforms                    | Our Approach                             |
+| ------------------------------------- | ---------------------------------------- |
+| Skills only                           | Full asset suite from day one            |
+| Quantity over quality (60k+ unvetted) | Automated quality scoring                |
+| Overwhelming search results           | Primary + alternatives pattern           |
+| No author tools                       | Analytics dashboard, future monetization |
+| Basic discovery                       | Trending, categories, staff picks        |
 
 ### Constraints
 
@@ -67,7 +67,7 @@ A **unified marketplace for Claude Code assets** - the first platform to support
 
 ### Long-Term Vision
 
-Become the **npm/PyPI of Claude Code** - the default place developers go to find and share Claude Code assets, with a sustainable author monetization model.
+**Claude Shed** becomes the **npm/PyPI of Claude Code** - the default place developers go to find and share Claude Code assets, with a sustainable author monetization model.
 
 ---
 
@@ -75,38 +75,40 @@ Become the **npm/PyPI of Claude Code** - the default place developers go to find
 
 ### Existing Platforms Analysis
 
-| Platform | Size | Strengths | Weaknesses |
-|----------|------|-----------|------------|
-| **SkillsMP** | 32,000+ | Largest catalog, semantic search | Low quality bar (2-star minimum) |
-| **claude-plugins.dev** | Medium | CLI-first, 8+ IDE support | No GUI browsing |
-| **claudecodeplugins.io** | 739 | Curated, excellent docs | Small catalog |
-| **claudecodemarketplace.net** | 1,325 | User accounts, upvoting | Skills collection is small (64) |
-| **Anthropic Official** | 29 | Pre-installed, trusted | Tiny, slow to add new plugins |
+| Platform                      | Size    | Strengths                        | Weaknesses                       |
+| ----------------------------- | ------- | -------------------------------- | -------------------------------- |
+| **SkillsMP**                  | 32,000+ | Largest catalog, semantic search | Low quality bar (2-star minimum) |
+| **claude-plugins.dev**        | Medium  | CLI-first, 8+ IDE support        | No GUI browsing                  |
+| **claudecodeplugins.io**      | 739     | Curated, excellent docs          | Small catalog                    |
+| **claudecodemarketplace.net** | 1,325   | User accounts, upvoting          | Skills collection is small (64)  |
+| **Anthropic Official**        | 29      | Pre-installed, trusted           | Tiny, slow to add new plugins    |
 
 ### Gaps Identified (Our Opportunities)
 
-| Gap | Opportunity |
-|-----|-------------|
-| Skills-only focus | Support all asset types |
-| No duplicate handling | Smart grouping algorithm |
-| No author analytics | Basic metrics → paid detailed analytics |
-| No monetization for authors | Future paid tiers |
-| No security scanning | Automated safety checks (phase 2) |
-| No verified publishers | Trust badges and verification |
+| Gap                         | Opportunity                             |
+| --------------------------- | --------------------------------------- |
+| Skills-only focus           | Support all asset types                 |
+| No duplicate handling       | Smart grouping algorithm                |
+| No author analytics         | Basic metrics → paid detailed analytics |
+| No monetization for authors | Future paid tiers                       |
+| No security scanning        | Automated safety checks (phase 2)       |
+| No verified publishers      | Trust badges and verification           |
 
 ### SKILL.md Standard
 
 The marketplace will follow the **open SKILL.md specification** at [agentskills.io/specification](https://agentskills.io/specification), ensuring compatibility with:
+
 - Claude Code
 - OpenAI Codex CLI
 - GitHub Copilot
 - Cursor, Amp, Zed
 
 **Required Fields:**
+
 ```yaml
 ---
-name: my-skill              # Max 64 chars, lowercase, hyphens only
-description: Does X when Y  # Max 1024 chars, triggers activation
+name: my-skill # Max 64 chars, lowercase, hyphens only
+description: Does X when Y # Max 1024 chars, triggers activation
 ---
 ```
 
@@ -119,6 +121,7 @@ description: Does X when Y  # Max 1024 chars, triggers activation
 ### Primary Users
 
 **Developers using Claude Code** who want to:
+
 - Find skills/tools to enhance their workflow
 - Discover what's popular and trending
 - Compare similar tools before installing
@@ -126,27 +129,30 @@ description: Does X when Y  # Max 1024 chars, triggers activation
 
 ### User Segments
 
-| Segment | Needs | Features |
-|---------|-------|----------|
-| **Browsers** | Quick discovery, easy install | Search, categories, trending |
+| Segment         | Needs                                    | Features                             |
+| --------------- | ---------------------------------------- | ------------------------------------ |
+| **Browsers**    | Quick discovery, easy install            | Search, categories, trending         |
 | **Power Users** | Filtering, comparison, saved collections | Advanced filters, favorites, history |
-| **Authors** | Easy submission, visibility, metrics | GitHub integration, analytics |
+| **Authors**     | Easy submission, visibility, metrics     | GitHub integration, analytics        |
 
 ### User Personas
 
 **1. Alex - The Explorer**
+
 - New to Claude Code
 - Wants to see what's possible
 - Browses categories, installs popular tools
 - Needs: Clear categories, "best of" lists, easy install
 
 **2. Sam - The Power User**
+
 - Uses Claude Code daily
 - Knows what they want, searches by keyword
 - Compares alternatives before choosing
 - Needs: Fast search, comparison features, detailed info
 
 **3. Jordan - The Creator**
+
 - Built useful skills/hooks
 - Wants to share with community
 - Cares about visibility and feedback
@@ -158,41 +164,41 @@ description: Does X when Y  # Max 1024 chars, triggers activation
 
 ### MVP Features (Phase 1)
 
-| Feature | Description | Priority |
-|---------|-------------|----------|
-| **Browse by Category** | Skills, Hooks, Agents, Commands, Snippets | Must Have |
-| **Keyword Search** | Fast, relevant results | Must Have |
-| **Trending Section** | Assets growing in popularity | Must Have |
-| **Popular Section** | Top K by installs | Must Have |
-| **New Arrivals** | Recently added assets | Must Have |
-| **Asset Detail Page** | Description, install command, author, stats | Must Have |
-| **Copy Install Command** | One-click copy | Must Have |
-| **GitHub OAuth** | For authors to submit | Must Have |
-| **GitHub Auto-Discovery** | Index public repos with SKILL.md | Must Have |
-| **Basic Ratings** | 5-star rating system | Must Have |
-| **Save to Favorites** | Bookmark assets (requires account) | Should Have |
-| **Share Button** | Share asset link | Should Have |
-| **Author Dashboard** | View count, install count | Should Have |
+| Feature                   | Description                                 | Priority    |
+| ------------------------- | ------------------------------------------- | ----------- |
+| **Browse by Category**    | Skills, Hooks, Agents, Commands, Snippets   | Must Have   |
+| **Keyword Search**        | Fast, relevant results                      | Must Have   |
+| **Trending Section**      | Assets growing in popularity                | Must Have   |
+| **Popular Section**       | Top K by installs                           | Must Have   |
+| **New Arrivals**          | Recently added assets                       | Must Have   |
+| **Asset Detail Page**     | Description, install command, author, stats | Must Have   |
+| **Copy Install Command**  | One-click copy                              | Must Have   |
+| **GitHub OAuth**          | For authors to submit                       | Must Have   |
+| **GitHub Auto-Discovery** | Index public repos with SKILL.md            | Must Have   |
+| **Basic Ratings**         | 5-star rating system                        | Must Have   |
+| **Save to Favorites**     | Bookmark assets (requires account)          | Should Have |
+| **Share Button**          | Share asset link                            | Should Have |
+| **Author Dashboard**      | View count, install count                   | Should Have |
 
 ### Phase 2 Features
 
-| Feature | Description |
-|---------|-------------|
-| **Security Scanning** | Automated checks for hooks/commands |
-| **Verified Authors** | Badge for trusted publishers |
-| **Reviews with Text** | Written reviews, not just stars |
-| **Collections/Bundles** | Group related assets |
-| **Claude Code Plugin** | Browse from within Claude Code |
-| **CLI Tool** | `npx marketplace install <asset>` |
+| Feature                 | Description                         |
+| ----------------------- | ----------------------------------- |
+| **Security Scanning**   | Automated checks for hooks/commands |
+| **Verified Authors**    | Badge for trusted publishers        |
+| **Reviews with Text**   | Written reviews, not just stars     |
+| **Collections/Bundles** | Group related assets                |
+| **Claude Code Plugin**  | Browse from within Claude Code      |
+| **CLI Tool**            | `npx marketplace install <asset>`   |
 
 ### Phase 3 Features (Post-Monetization)
 
-| Feature | Description |
-|---------|-------------|
-| **Detailed Analytics** | Time series, geography, referrers |
-| **Promoted Listings** | Authors pay for visibility |
-| **Premium Assets** | Paid skills/hooks |
-| **Enterprise Features** | Private registries, SSO |
+| Feature                 | Description                       |
+| ----------------------- | --------------------------------- |
+| **Detailed Analytics**  | Time series, geography, referrers |
+| **Promoted Listings**   | Authors pay for visibility        |
+| **Premium Assets**      | Paid skills/hooks                 |
+| **Enterprise Features** | Private registries, SSO           |
 
 ---
 
@@ -200,54 +206,54 @@ description: Does X when Y  # Max 1024 chars, triggers activation
 
 ### Supported Asset Types
 
-| Type | Icon | Color | Description |
-|------|------|-------|-------------|
-| **Skills** | ⚡ | Amber (#f5a623) | SKILL.md files that extend Claude's capabilities |
-| **Hooks** | 🪝 | Purple (#a855f7) | Shell scripts that run before/after events |
-| **Sub-Agents** | 🤖 | Cyan (#22d3ee) | Specialized agent definitions |
-| **Commands** | 📜 | Green (#22c55e) | Slash commands for quick actions |
-| **Snippets** | 📄 | Gray (#71717a) | CLAUDE.md partials for reuse |
-| **Bundles** | 📦 | Gradient | Collections of related assets |
+| Type           | Icon | Color            | Description                                      |
+| -------------- | ---- | ---------------- | ------------------------------------------------ |
+| **Skills**     | ⚡   | Amber (#f5a623)  | SKILL.md files that extend Claude's capabilities |
+| **Hooks**      | 🪝   | Purple (#a855f7) | Shell scripts that run before/after events       |
+| **Sub-Agents** | 🤖   | Cyan (#22d3ee)   | Specialized agent definitions                    |
+| **Commands**   | 📜   | Green (#22c55e)  | Slash commands for quick actions                 |
+| **Snippets**   | 📄   | Gray (#71717a)   | CLAUDE.md partials for reuse                     |
+| **Bundles**    | 📦   | Gradient         | Collections of related assets                    |
 
 ### Asset Schema
 
 ```typescript
 interface Asset {
   // Identity
-  id: string;                    // UUID
-  name: string;                  // Unique within type
-  slug: string;                  // URL-friendly identifier
-  type: AssetType;               // skill | hook | agent | command | snippet | bundle
+  id: string; // UUID
+  name: string; // Unique within type
+  slug: string; // URL-friendly identifier
+  type: AssetType; // skill | hook | agent | command | snippet | bundle
 
   // Content
-  description: string;           // Short description (max 1024 chars)
-  readme: string;                // Full markdown documentation
-  installCommand: string;        // Copy-paste install command
+  description: string; // Short description (max 1024 chars)
+  readme: string; // Full markdown documentation
+  installCommand: string; // Copy-paste install command
 
   // Source
-  sourceType: 'github' | 'upload' | 'discovered';
-  sourceUrl?: string;            // GitHub repo URL
-  version: string;               // Latest version
+  sourceType: "github" | "upload" | "discovered";
+  sourceUrl?: string; // GitHub repo URL
+  version: string; // Latest version
 
   // Author
-  authorId: string;              // Reference to User
-  authorName: string;            // Display name
-  authorVerified: boolean;       // Verified badge
+  authorId: string; // Reference to User
+  authorName: string; // Display name
+  authorVerified: boolean; // Verified badge
 
   // Metadata
-  tags: string[];                // Searchable tags
-  category: string;              // Primary category
-  license?: string;              // Apache-2.0, MIT, etc.
+  tags: string[]; // Searchable tags
+  category: string; // Primary category
+  license?: string; // Apache-2.0, MIT, etc.
 
   // Stats
   installCount: number;
   viewCount: number;
-  rating: number;                // 1-5 average
+  rating: number; // 1-5 average
   ratingCount: number;
 
   // Grouping
-  similarTo?: string[];          // IDs of similar assets
-  primaryInGroup: boolean;       // Is this the "best" in its group?
+  similarTo?: string[]; // IDs of similar assets
+  primaryInGroup: boolean; // Is this the "best" in its group?
 
   // Timestamps
   createdAt: Date;
@@ -255,7 +261,7 @@ interface Asset {
 
   // Trends
   installsThisWeek: number;
-  installsTrend: number;         // % change week over week
+  installsTrend: number; // % change week over week
 }
 ```
 
@@ -308,28 +314,31 @@ interface Asset {
 
 ### Homepage Discovery Sections
 
-| Section | Algorithm | Display |
-|---------|-----------|---------|
-| **Trending** | Highest % increase in installs (7 days) | Top 6, horizontal scroll |
-| **Popular** | Highest total installs | Top 10, grid |
-| **New Arrivals** | Most recent `createdAt` | Top 8, horizontal scroll |
-| **Staff Picks** | Manually curated (future) | 1 featured + 3 secondary |
-| **By Category** | Category landing pages | 6 category cards |
+| Section          | Algorithm                               | Display                  |
+| ---------------- | --------------------------------------- | ------------------------ |
+| **Trending**     | Highest % increase in installs (7 days) | Top 6, horizontal scroll |
+| **Popular**      | Highest total installs                  | Top 10, grid             |
+| **New Arrivals** | Most recent `createdAt`                 | Top 8, horizontal scroll |
+| **Staff Picks**  | Manually curated (future)               | 1 featured + 3 secondary |
+| **By Category**  | Category landing pages                  | 6 category cards         |
 
 ### Search Algorithm
 
 **Query Processing:**
+
 1. Tokenize search query
 2. Match against: `name`, `description`, `tags`, `readme`
 3. Weight: name (3x) > tags (2x) > description (1.5x) > readme (1x)
 
 **Ranking Formula:**
+
 ```
 score = (relevance × 0.4) + (installs_normalized × 0.3) +
         (rating × 0.2) + (recency × 0.1)
 ```
 
 **Filters Available:**
+
 - Asset type (multi-select)
 - Minimum rating
 - Minimum installs
@@ -369,6 +378,7 @@ score = (relevance × 0.4) + (installs_normalized × 0.3) +
 ### The Problem
 
 Multiple assets often solve the same problem (e.g., 5 different "git commit message generators"). Showing all equally:
+
 - Overwhelms users with choice
 - Makes it hard to pick the "best"
 - Buries quality under quantity
@@ -380,6 +390,7 @@ Multiple assets often solve the same problem (e.g., 5 different "git commit mess
 ### Similarity Detection Algorithm
 
 **Step 1: Text Similarity**
+
 ```python
 def compute_similarity(asset_a, asset_b):
     # Combine searchable text
@@ -393,6 +404,7 @@ def compute_similarity(asset_a, asset_b):
 ```
 
 **Step 2: Grouping**
+
 ```python
 SIMILARITY_THRESHOLD = 0.65  # Tunable
 
@@ -411,6 +423,7 @@ def group_similar_assets(assets):
 ```
 
 **Step 3: Select Primary**
+
 ```python
 def select_primary(group):
     # Score each asset
@@ -432,6 +445,7 @@ def select_primary(group):
 ### UI Pattern
 
 **Collapsed State (Default):**
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  🏆 smart-commit  ⚡                        PRIMARY         │
@@ -443,6 +457,7 @@ def select_primary(group):
 ```
 
 **Expanded State (On Click):**
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │  🏆 smart-commit  ⚡                        PRIMARY         │
@@ -465,12 +480,12 @@ def select_primary(group):
 
 ### Edge Cases
 
-| Scenario | Handling |
-|----------|----------|
-| New asset similar to popular one | Add to group as alternative |
-| New asset becomes more popular | Re-run algorithm weekly, swap primary |
-| Asset has no similar matches | Show standalone (no alternatives section) |
-| Two assets tied in score | Prefer more recent `updatedAt` |
+| Scenario                         | Handling                                  |
+| -------------------------------- | ----------------------------------------- |
+| New asset similar to popular one | Add to group as alternative               |
+| New asset becomes more popular   | Re-run algorithm weekly, swap primary     |
+| Asset has no similar matches     | Show standalone (no alternatives section) |
+| Two assets tied in score         | Prefer more recent `updatedAt`            |
 
 ---
 
@@ -481,6 +496,7 @@ def select_primary(group):
 A sophisticated fusion of **developer-native terminal aesthetics** with **editorial magazine layouts**.
 
 **Why This Works:**
+
 - Dark mode = developers' natural habitat
 - Command bar hero = feels native
 - Magazine layout = prevents overwhelming
@@ -526,13 +542,13 @@ A sophisticated fusion of **developer-native terminal aesthetics** with **editor
 
 ```css
 /* Headlines - Distinctive serif */
---font-display: 'Playfair Display', serif;
+--font-display: "Playfair Display", serif;
 
 /* Body - Clean, readable */
---font-body: 'DM Sans', sans-serif;
+--font-body: "DM Sans", sans-serif;
 
 /* Code - Developer-native */
---font-mono: 'JetBrains Mono', monospace;
+--font-mono: "JetBrains Mono", monospace;
 ```
 
 ### Page Layouts
@@ -677,11 +693,13 @@ A sophisticated fusion of **developer-native terminal aesthetics** with **editor
 ### Mobile Responsive
 
 **Breakpoints:**
+
 - Mobile: < 768px
 - Tablet: 768px - 1024px
 - Desktop: > 1024px
 
 **Mobile Adaptations:**
+
 - Single column layout
 - Bottom sheet for filters
 - Hamburger menu for navigation
@@ -703,15 +721,15 @@ A sophisticated fusion of **developer-native terminal aesthetics** with **editor
 
 ### Stack
 
-| Layer | Technology | Rationale |
-|-------|------------|-----------|
-| **Frontend** | Next.js 14 (App Router) | React + SSR, great DX |
-| **Hosting** | Vercel | Free tier, easy deployment |
-| **Database** | Supabase (Postgres) | Free tier, auth included |
-| **Auth** | Supabase Auth (GitHub OAuth) | Built-in, simple |
-| **Storage** | Supabase Storage | Asset screenshots, avatars |
-| **Search** | Postgres full-text | Free, good enough for MVP |
-| **Caching** | Vercel Edge Cache | Performance |
+| Layer        | Technology                   | Rationale                  |
+| ------------ | ---------------------------- | -------------------------- |
+| **Frontend** | Next.js 14 (App Router)      | React + SSR, great DX      |
+| **Hosting**  | Vercel                       | Free tier, easy deployment |
+| **Database** | Supabase (Postgres)          | Free tier, auth included   |
+| **Auth**     | Supabase Auth (GitHub OAuth) | Built-in, simple           |
+| **Storage**  | Supabase Storage             | Asset screenshots, avatars |
+| **Search**   | Postgres full-text           | Free, good enough for MVP  |
+| **Caching**  | Vercel Edge Cache            | Performance                |
 
 ### Database Schema
 
@@ -862,12 +880,13 @@ POST   /api/auth/logout               # Logout
 ### GitHub Auto-Discovery
 
 **Cron Job (Daily):**
+
 ```typescript
 async function discoverSkills() {
   // Search GitHub for SKILL.md files
   const results = await github.search.code({
-    q: 'filename:SKILL.md path:.claude/skills',
-    per_page: 100
+    q: "filename:SKILL.md path:.claude/skills",
+    per_page: 100,
   });
 
   for (const file of results.items) {
@@ -879,7 +898,7 @@ async function discoverSkills() {
     const content = await github.repos.getContent({
       owner: file.repository.owner.login,
       repo: file.repository.name,
-      path: file.path
+      path: file.path,
     });
 
     const parsed = parseSkillMd(content);
@@ -888,7 +907,7 @@ async function discoverSkills() {
     await db.assets.create({
       name: parsed.name,
       description: parsed.description,
-      sourceType: 'discovered',
+      sourceType: "discovered",
       sourceUrl: file.repository.html_url,
       // ... other fields
     });
@@ -904,22 +923,22 @@ async function discoverSkills() {
 
 For MVP, security is **automated but not blocking**:
 
-| Check | Implementation | Action |
-|-------|----------------|--------|
-| **SKILL.md Validation** | YAML schema validation | Reject invalid |
-| **Basic Pattern Scan** | Regex for obvious dangers | Flag for review |
-| **Rate Limiting** | Per-IP and per-user limits | Prevent abuse |
-| **Auth** | GitHub OAuth only | Verified identity |
+| Check                   | Implementation             | Action            |
+| ----------------------- | -------------------------- | ----------------- |
+| **SKILL.md Validation** | YAML schema validation     | Reject invalid    |
+| **Basic Pattern Scan**  | Regex for obvious dangers  | Flag for review   |
+| **Rate Limiting**       | Per-IP and per-user limits | Prevent abuse     |
+| **Auth**                | GitHub OAuth only          | Verified identity |
 
 ### Future Security (Phase 2)
 
-| Feature | Description |
-|---------|-------------|
-| **ShellCheck Integration** | Static analysis for hooks |
-| **Dangerous Pattern Detection** | `curl\|sh`, `eval`, `rm -rf` |
-| **Sandbox Testing** | Run hooks in isolated container |
-| **Verified Authors** | Manual verification for trusted badge |
-| **Community Reporting** | Flag suspicious assets |
+| Feature                         | Description                           |
+| ------------------------------- | ------------------------------------- |
+| **ShellCheck Integration**      | Static analysis for hooks             |
+| **Dangerous Pattern Detection** | `curl\|sh`, `eval`, `rm -rf`          |
+| **Sandbox Testing**             | Run hooks in isolated container       |
+| **Verified Authors**            | Manual verification for trusted badge |
+| **Community Reporting**         | Flag suspicious assets                |
 
 ### Trust Indicators (Displayed to Users)
 
@@ -942,23 +961,24 @@ For MVP, security is **automated but not blocking**:
 
 **Goal:** Launchable product with core discovery and browsing.
 
-| Feature | Status | Notes |
-|---------|--------|-------|
-| Homepage with sections | Required | Trending, popular, categories, new |
-| Keyword search | Required | Postgres full-text |
-| Asset detail pages | Required | Install command, stats, author |
-| Browse by category | Required | 6 asset types |
-| Browse by type | Required | Skills, hooks, etc. |
-| GitHub OAuth | Required | For authors |
-| Submit via GitHub URL | Required | Parse SKILL.md from repo |
-| View/install tracking | Required | Basic counters |
-| 5-star ratings | Required | No text reviews yet |
-| Save to favorites | Should have | Requires login |
-| Share button | Should have | Copy link |
-| Author dashboard | Should have | View count, install count |
-| Mobile responsive | Required | Works on all devices |
+| Feature                | Status      | Notes                              |
+| ---------------------- | ----------- | ---------------------------------- |
+| Homepage with sections | Required    | Trending, popular, categories, new |
+| Keyword search         | Required    | Postgres full-text                 |
+| Asset detail pages     | Required    | Install command, stats, author     |
+| Browse by category     | Required    | 6 asset types                      |
+| Browse by type         | Required    | Skills, hooks, etc.                |
+| GitHub OAuth           | Required    | For authors                        |
+| Submit via GitHub URL  | Required    | Parse SKILL.md from repo           |
+| View/install tracking  | Required    | Basic counters                     |
+| 5-star ratings         | Required    | No text reviews yet                |
+| Save to favorites      | Should have | Requires login                     |
+| Share button           | Should have | Copy link                          |
+| Author dashboard       | Should have | View count, install count          |
+| Mobile responsive      | Required    | Works on all devices               |
 
 **Not in MVP:**
+
 - Security scanning
 - Text reviews
 - CLI tool
@@ -969,22 +989,22 @@ For MVP, security is **automated but not blocking**:
 
 ### Phase 2: Growth (Post-Launch)
 
-| Feature | Timeline |
-|---------|----------|
-| GitHub auto-discovery | +2 weeks |
-| Text reviews | +2 weeks |
+| Feature                   | Timeline |
+| ------------------------- | -------- |
+| GitHub auto-discovery     | +2 weeks |
+| Text reviews              | +2 weeks |
 | Security scanning (hooks) | +4 weeks |
-| Verified author program | +4 weeks |
-| CLI tool | +6 weeks |
-| Claude Code plugin | +8 weeks |
+| Verified author program   | +4 weeks |
+| CLI tool                  | +6 weeks |
+| Claude Code plugin        | +8 weeks |
 
 ### Phase 3: Monetization (After User Growth)
 
-| Feature | Timeline |
-|---------|----------|
+| Feature                   | Timeline  |
+| ------------------------- | --------- |
 | Detailed analytics (paid) | +3 months |
-| Promoted listings | +4 months |
-| Premium assets | +6 months |
+| Promoted listings         | +4 months |
+| Premium assets            | +6 months |
 
 ---
 
@@ -993,24 +1013,26 @@ For MVP, security is **automated but not blocking**:
 ### Strategy: Free to Start, Monetize Later
 
 **Phase 1 (MVP):** Completely free
+
 - Build user base
 - Establish trust
 - Gather feedback
 
 **Phase 2 (Growth):** Introduce optional paid features
+
 - Don't paywall core functionality
 - Premium = enhanced, not required
 
 ### Monetization Options
 
-| Option | Model | Platform Cut | Notes |
-|--------|-------|--------------|-------|
-| **Detailed Analytics** | Subscription | 100% to platform | $5-10/month for authors |
-| **Promoted Listings** | Pay-per-impression | 100% to platform | Boost visibility in search |
-| **Premium Assets** | One-time or subscription | 15-20% to platform | Authors sell paid skills |
-| **Tips/Sponsors** | One-time | 0% (pass-through) | Like GitHub Sponsors |
-| **Verified Badge** | One-time fee | 100% to platform | $25-50 for verification |
-| **Enterprise** | Subscription | 100% to platform | Private registries, SSO |
+| Option                 | Model                    | Platform Cut       | Notes                      |
+| ---------------------- | ------------------------ | ------------------ | -------------------------- |
+| **Detailed Analytics** | Subscription             | 100% to platform   | $5-10/month for authors    |
+| **Promoted Listings**  | Pay-per-impression       | 100% to platform   | Boost visibility in search |
+| **Premium Assets**     | One-time or subscription | 15-20% to platform | Authors sell paid skills   |
+| **Tips/Sponsors**      | One-time                 | 0% (pass-through)  | Like GitHub Sponsors       |
+| **Verified Badge**     | One-time fee             | 100% to platform   | $25-50 for verification    |
+| **Enterprise**         | Subscription             | 100% to platform   | Private registries, SSO    |
 
 ### Recommended Rollout
 
@@ -1021,12 +1043,12 @@ For MVP, security is **automated but not blocking**:
 
 ### Revenue Projections (Conservative)
 
-| Milestone | Users | Paying Users | MRR |
-|-----------|-------|--------------|-----|
-| Month 6 | 1,000 | 20 (2%) | $180 |
-| Month 12 | 5,000 | 150 (3%) | $1,350 |
-| Month 18 | 15,000 | 600 (4%) | $5,400 |
-| Month 24 | 30,000 | 1,500 (5%) | $13,500 |
+| Milestone | Users  | Paying Users | MRR     |
+| --------- | ------ | ------------ | ------- |
+| Month 6   | 1,000  | 20 (2%)      | $180    |
+| Month 12  | 5,000  | 150 (3%)     | $1,350  |
+| Month 18  | 15,000 | 600 (4%)     | $5,400  |
+| Month 24  | 30,000 | 1,500 (5%)   | $13,500 |
 
 ---
 
@@ -1038,26 +1060,26 @@ For MVP, security is **automated but not blocking**:
 
 ### Key Metrics
 
-| Metric | Definition | Target (Month 6) |
-|--------|------------|------------------|
-| **Total Assets** | Assets in database | 1,000+ |
-| **Monthly Visits** | Unique visitors | 10,000 |
-| **Monthly Installs** | Install button clicks | 5,000 |
-| **Active Authors** | Authors with 1+ asset | 200 |
-| **Avg Rating** | Mean star rating | 4.0+ |
-| **Search Success** | Searches that lead to install | 30% |
+| Metric               | Definition                    | Target (Month 6) |
+| -------------------- | ----------------------------- | ---------------- |
+| **Total Assets**     | Assets in database            | 1,000+           |
+| **Monthly Visits**   | Unique visitors               | 10,000           |
+| **Monthly Installs** | Install button clicks         | 5,000            |
+| **Active Authors**   | Authors with 1+ asset         | 200              |
+| **Avg Rating**       | Mean star rating              | 4.0+             |
+| **Search Success**   | Searches that lead to install | 30%              |
 
 ### Tracking Implementation
 
 ```typescript
 // Track key events
-analytics.track('asset_viewed', { assetId, assetType });
-analytics.track('install_clicked', { assetId, assetType });
-analytics.track('search_performed', { query, resultCount });
-analytics.track('search_result_clicked', { query, assetId, position });
-analytics.track('asset_submitted', { assetType, sourceType });
-analytics.track('rating_submitted', { assetId, rating });
-analytics.track('favorite_added', { assetId });
+analytics.track("asset_viewed", { assetId, assetType });
+analytics.track("install_clicked", { assetId, assetType });
+analytics.track("search_performed", { query, resultCount });
+analytics.track("search_result_clicked", { query, assetId, position });
+analytics.track("asset_submitted", { assetType, sourceType });
+analytics.track("rating_submitted", { assetId, rating });
+analytics.track("favorite_added", { assetId });
 ```
 
 ---
@@ -1078,6 +1100,7 @@ analytics.track('favorite_added', { assetId });
 **Decision:** Automated quality gates + community reporting
 
 **Quality Score Algorithm:**
+
 ```python
 quality_score = (
     description_length_score +     # 0-20 points (min 50 chars)
@@ -1102,6 +1125,7 @@ if quality_score >= 60: auto_publish
 | Rate limiting | Max 3 submissions/day for new authors | Throttle |
 
 **Community Reporting:**
+
 - Flag button on each asset
 - After 3 flags, auto-hide pending review
 - Reputation system for reporters (future)
@@ -1110,11 +1134,11 @@ if quality_score >= 60: auto_publish
 
 **Decision:** Hybrid approach
 
-| Layer | Tool | Data |
-|-------|------|------|
-| **Page Analytics** | Vercel Analytics (free) | Traffic, performance, bounce |
-| **Product Events** | Supabase (database) | Installs, views, searches, ratings |
-| **Error Monitoring** | Vercel built-in | Errors, exceptions |
+| Layer                | Tool                    | Data                               |
+| -------------------- | ----------------------- | ---------------------------------- |
+| **Page Analytics**   | Vercel Analytics (free) | Traffic, performance, bounce       |
+| **Product Events**   | Supabase (database)     | Installs, views, searches, ratings |
+| **Error Monitoring** | Vercel built-in         | Errors, exceptions                 |
 
 ### Legal
 
@@ -1153,6 +1177,7 @@ if quality_score >= 60: auto_publish
 **Decision:** Critical priority
 
 **Implementation:**
+
 - Server-side rendering (Next.js App Router)
 - Dynamic meta tags per asset page
 - Sitemap generation
@@ -1161,6 +1186,7 @@ if quality_score >= 60: auto_publish
 - Category landing pages for keyword targeting
 
 **Target Keywords:**
+
 - "claude code skills"
 - "claude code plugins"
 - "claude code hooks"
@@ -1172,21 +1198,20 @@ if quality_score >= 60: auto_publish
 
 ### Project Name
 
-**Decision:** Use placeholder `claude-marketplace` for development, rename before public launch.
+**Decision:** **Claude Shed** (claudeshed.com) - A developer tool shed for Claude Code assets.
 
 ### Remaining Decisions
 
-| Question | Options | Decision Needed By |
-|----------|---------|-------------------|
-| Final platform name? | TBD | Before public launch |
-| Allow duplicate names across types? | Yes / No / Namespaced | Before schema finalization |
-| Require license field? | Required / Optional / Default | Before launch |
+| Question                            | Options                       | Decision Needed By         |
+| ----------------------------------- | ----------------------------- | -------------------------- |
+| Allow duplicate names across types? | Yes / No / Namespaced         | Before schema finalization |
+| Require license field?              | Required / Optional / Default | Before launch              |
 
 ### Technical Questions
 
-| Question | Options | Decision Needed By |
-|----------|---------|-------------------|
-| Full-text search enough? | Postgres / Algolia / Typesense | Before launch |
+| Question                    | Options                        | Decision Needed By         |
+| --------------------------- | ------------------------------ | -------------------------- |
+| Full-text search enough?    | Postgres / Algolia / Typesense | Before launch              |
 | Background jobs for import? | Vercel Cron / Inngest / QStash | Before seed content import |
 
 ---
@@ -1237,34 +1262,37 @@ Detailed security implementation plan available in research notes.
 
 ### Key User Preferences Expressed
 
-| Topic | User's Preference |
-|-------|-------------------|
-| **Duplicate handling** | Wanted recommendation - we chose "Primary + Alternatives" pattern |
-| **Monetization** | Free first, monetize after user growth |
-| **Curation** | Fully automated (no manual review) |
-| **Asset types** | Full suite from day one |
-| **Submission** | GitHub auto-discovery + manual submission + direct upload |
-| **Auth** | GitHub OAuth for authors only, anonymous browsing allowed |
-| **Security scanning** | Nice to have, not MVP blocker |
-| **Community features** | None for MVP |
-| **SEO** | Critical priority |
-| **Analytics** | Vercel + database events (detailed analytics as future paid feature) |
+| Topic                  | User's Preference                                                    |
+| ---------------------- | -------------------------------------------------------------------- |
+| **Duplicate handling** | Wanted recommendation - we chose "Primary + Alternatives" pattern    |
+| **Monetization**       | Free first, monetize after user growth                               |
+| **Curation**           | Fully automated (no manual review)                                   |
+| **Asset types**        | Full suite from day one                                              |
+| **Submission**         | GitHub auto-discovery + manual submission + direct upload            |
+| **Auth**               | GitHub OAuth for authors only, anonymous browsing allowed            |
+| **Security scanning**  | Nice to have, not MVP blocker                                        |
+| **Community features** | None for MVP                                                         |
+| **SEO**                | Critical priority                                                    |
+| **Analytics**          | Vercel + database events (detailed analytics as future paid feature) |
 
 ### Research Findings Worth Remembering
 
 **Existing Platform Weaknesses:**
+
 - SkillsMP: 32k+ skills but low quality bar (2-star minimum)
 - claude-plugins.dev: CLI-first, no GUI browsing
 - claudecodeplugins.io: Good docs but small catalog (739)
 - All platforms: No author analytics, no monetization, no security scanning, skills-only focus
 
 **Monetization Benchmarks:**
+
 - JetBrains: 75%+ to developers, handles taxes/payments
 - GitHub Sponsors: 0% fee for personal sponsors
 - Polar.sh: 4% + $0.40, merchant of record
 - VS Code: No native monetization (major gap)
 
 **SKILL.md Standard:**
+
 - Spec at agentskills.io/specification
 - Required: `name` (64 chars), `description` (1024 chars)
 - Optional: `allowed-tools`, `model`, `license`, `metadata`
@@ -1272,27 +1300,26 @@ Detailed security implementation plan available in research notes.
 
 ### Decisions Made (With Rationale)
 
-| Decision | Choice | Why |
-|----------|--------|-----|
-| Stack | Next.js + Vercel + Supabase | Free tiers, fast to ship, solo-friendly |
-| Duplicate handling | Algorithm selects primary, shows alternatives collapsed | Less overwhelming than showing all equally |
-| Quality scoring | 0-100 score, auto-publish at 60+ | Balances quality with low friction |
-| Seed content | Import from existing platforms | Need content at launch for credibility |
-| Name | Placeholder "claude-marketplace" | Avoid bikeshedding, rename before launch |
-| Plugin | Full terminal integration | User specifically wanted browse-in-terminal |
+| Decision           | Choice                                                  | Why                                         |
+| ------------------ | ------------------------------------------------------- | ------------------------------------------- |
+| Stack              | Next.js + Vercel + Supabase                             | Free tiers, fast to ship, solo-friendly     |
+| Duplicate handling | Algorithm selects primary, shows alternatives collapsed | Less overwhelming than showing all equally  |
+| Quality scoring    | 0-100 score, auto-publish at 60+                        | Balances quality with low friction          |
+| Seed content       | Import from existing platforms                          | Need content at launch for credibility      |
+| Name               | "Claude Shed" (claudeshed.com)                          | Developer tool shed metaphor, memorable     |
+| Plugin             | Full terminal integration                               | User specifically wanted browse-in-terminal |
 
 ### Things Explicitly Deferred
 
-| Item | Deferred To | Notes |
-|------|-------------|-------|
-| Final platform name | Before public launch | Using placeholder for now |
-| Security scanning | Phase 2 | User said "nice to have" |
-| Text reviews | Phase 2 | MVP has star ratings only |
-| CLI tool | Phase 2 | Web-first approach |
-| Claude Code plugin | Phase 2 | User wants it but not blocking MVP |
-| Detailed analytics | Monetization phase | First paid feature |
-| Verified author badges | Phase 2 | Need manual verification process |
-| Community (Discord, forums) | Post-launch | Based on user demand |
+| Item                        | Deferred To        | Notes                              |
+| --------------------------- | ------------------ | ---------------------------------- |
+| Security scanning           | Phase 2            | User said "nice to have"           |
+| Text reviews                | Phase 2            | MVP has star ratings only          |
+| CLI tool                    | Phase 2            | Web-first approach                 |
+| Claude Code plugin          | Phase 2            | User wants it but not blocking MVP |
+| Detailed analytics          | Monetization phase | First paid feature                 |
+| Verified author badges      | Phase 2            | Need manual verification process   |
+| Community (Discord, forums) | Post-launch        | Based on user demand               |
 
 ### Potential Future Directions Discussed
 
@@ -1321,20 +1348,25 @@ Detailed security implementation plan available in research notes.
 ### Design Patterns Established
 
 **"Primary + Alternatives" for Duplicates:**
+
 ```
 score = (installs × 0.4) + (rating × 0.3) + (recency × 0.2) + (author_trust × 0.1)
 ```
+
 Highest score becomes primary. Others shown collapsed but accessible.
 
 **Quality Score for Submissions:**
+
 ```
 quality_score = description_length + has_readme + github_stars + author_history + no_spam
 ```
+
 - < 40: Reject
 - 40-59: Flag for review
 - 60+: Auto-publish
 
 **Asset Type Color Coding:**
+
 - Skills: Amber (#f5a623)
 - Hooks: Purple (#a855f7)
 - Agents: Cyan (#22d3ee)
@@ -1367,15 +1399,15 @@ quality_score = description_length + has_readme + github_stars + author_history 
 
 ### Files Created This Session
 
-| File | Purpose |
-|------|---------|
+| File                                              | Purpose              |
+| ------------------------------------------------- | -------------------- |
 | `/Users/mchoi/claude-asset-marketplace-design.md` | This design document |
 
 ### Recommended Next Steps
 
 When resuming development:
 
-1. **Create GitHub repo** (`claude-marketplace`)
+1. **Create GitHub repo** (`claude-shed`)
 2. **Initialize Next.js 14** with App Router
 3. **Set up Supabase** project and run schema migrations
 4. **Build core pages:** Homepage, search, asset detail
@@ -1391,7 +1423,7 @@ When resuming development:
 ### Questions to Ask User When Resuming
 
 If picking up this project later, consider asking:
-- "Have you thought more about the platform name?"
+
 - "Should we allow the same asset name across different types (e.g., 'smart-commit' as both a skill and a hook)?"
 - "Do you want license to be a required field?"
 - "Ready to start building, or need to refine anything first?"
